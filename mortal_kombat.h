@@ -36,6 +36,9 @@ namespace mortal_kombat
         /// @brief Destructor. Cleans up resources.
         ~MK() {destroy();}
 
+        void initialScreen() const;
+        std::pair<int, int> chooseFighterScreen() const;
+
         /// @brief Runs the main game loop.
         void run() const;
 
@@ -90,7 +93,7 @@ namespace mortal_kombat
         static constexpr int templeW = 300;
         static constexpr int templeH = 245;
         // --------------------------------------------------------
-
+        static constexpr int numOfFighters = 5;
 
 
         SDL_Renderer* ren{};
@@ -500,6 +503,74 @@ namespace mortal_kombat
                 .leftBarNameSource = { 5406, 142, 163, 12 },
                 .rightBarNameSource = { 5579, 142, 163, 12 },
                 .winText = WIN_SPRITE[CharacterType::LIU_KANG],
+            };
+
+            constexpr static Character MOSHE = {
+                .name = "Sub-Moshe",
+                .sprite = SUBZERO_SPRITE,
+                .specialAttackSprite = SUBZERO_SPECIAL_ATTACK_SPRITE,
+                .specialAttackOffset_y = 88,
+                .specialAttacks = {{Inputs::LOW_PUNCH, Inputs::LEFT | Inputs::DIRECTION_RIGHT, Inputs::RIGHT | Inputs::DIRECTION_RIGHT},
+                            {Inputs::LOW_PUNCH, Inputs::RIGHT | Inputs::DIRECTION_LEFT, Inputs::LEFT | Inputs::DIRECTION_LEFT}},
+                .leftBarNameSource = { 5406, 99, 163, 12 }, //Cage
+                .rightBarNameSource = { 5579, 99, 163, 12 },
+                .winText = WIN_SPRITE[CharacterType::MOSHE],
+            };
+
+            constexpr static Character ITAMAR = {
+                .name = "Itamar-Fu",
+                .sprite = LIU_KANG_SPRITE,
+                .specialAttackSprite = LIU_SPECIAL_ATTACK_SPRITE,
+                .specialAttackOffset_y = 72,
+                .specialAttacks = {{Inputs::LOW_PUNCH, Inputs::LEFT | Inputs::DIRECTION_RIGHT, Inputs::RIGHT | Inputs::DIRECTION_RIGHT},
+                        {Inputs::LOW_PUNCH, Inputs::RIGHT | Inputs::DIRECTION_LEFT, Inputs::LEFT | Inputs::DIRECTION_LEFT}},
+                .leftBarNameSource = { 5406, 114, 163, 12 }, //Kano
+                .rightBarNameSource = { 5579, 114, 163, 12 },
+                .winText = WIN_SPRITE[CharacterType::ITAMAR],
+            };
+
+            constexpr static Character YANIV = {
+                .name = "Yaniv",
+                .sprite = SUBZERO_SPRITE,
+                .specialAttackSprite = SUBZERO_SPECIAL_ATTACK_SPRITE,
+                .specialAttackOffset_y = 88,
+                .specialAttacks = {{Inputs::LOW_PUNCH, Inputs::LEFT | Inputs::DIRECTION_RIGHT, Inputs::RIGHT | Inputs::DIRECTION_RIGHT},
+                            {Inputs::LOW_PUNCH, Inputs::RIGHT | Inputs::DIRECTION_LEFT, Inputs::LEFT | Inputs::DIRECTION_LEFT}},
+                .leftBarNameSource = { 5406, 129, 163, 12 }, //Raiden
+                .rightBarNameSource = { 5579, 129, 163, 12 },
+                .winText = WIN_SPRITE[CharacterType::YANIV],
+            };
+
+            constexpr static Character GEFFEN = {
+                .name = "Geffen",
+                .sprite = LIU_KANG_SPRITE,
+                .specialAttackSprite = LIU_SPECIAL_ATTACK_SPRITE,
+                .specialAttackOffset_y = 72,
+                .specialAttacks = {{Inputs::LOW_PUNCH, Inputs::LEFT | Inputs::DIRECTION_RIGHT, Inputs::RIGHT | Inputs::DIRECTION_RIGHT},
+                        {Inputs::LOW_PUNCH, Inputs::RIGHT | Inputs::DIRECTION_LEFT, Inputs::LEFT | Inputs::DIRECTION_LEFT}},
+                .leftBarNameSource = { 5406, 159, 163, 12 }, //Scorpion
+                .rightBarNameSource = { 5579, 159, 163, 12 },
+                .winText = WIN_SPRITE[CharacterType::GEFFEN],
+            };
+
+            constexpr static Character YONATAN = {
+                .name = "Yonatan",
+                .sprite = SUBZERO_SPRITE,
+                .specialAttackSprite = SUBZERO_SPECIAL_ATTACK_SPRITE,
+                .specialAttackOffset_y = 88,
+                .specialAttacks = {{Inputs::LOW_PUNCH, Inputs::LEFT | Inputs::DIRECTION_RIGHT, Inputs::RIGHT | Inputs::DIRECTION_RIGHT},
+                            {Inputs::LOW_PUNCH, Inputs::RIGHT | Inputs::DIRECTION_LEFT, Inputs::LEFT | Inputs::DIRECTION_LEFT}},
+                .leftBarNameSource = { 5406, 189, 163, 12 }, //Sonya
+                .rightBarNameSource = { 5579, 189, 163, 12 },
+                .winText = WIN_SPRITE[CharacterType::YONATAN],
+            };
+
+            constexpr static std::array<Character, numOfFighters> ALL_CHARACTERS = {
+                MOSHE,
+                ITAMAR,
+                YANIV,
+                GEFFEN,
+                YONATAN
             };
         };
 

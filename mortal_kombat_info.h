@@ -81,12 +81,17 @@ namespace mortal_kombat
         SUBZERO,
         SONYA,
         GORO,
-        SHANG_TSUNG
+        SHANG_TSUNG,
+        MOSHE,
+        ITAMAR,
+        YANIV,
+        GEFFEN,
+        YONATAN
     };
 
     static constexpr int CHARACTER_SPRITE_SIZE = 46;
     static constexpr int SPECIAL_ATTACK_SPRITE_SIZE = 2;
-    static constexpr int WIN_SPRITE_BY_CHARACTER_SIZE = 9;
+    static constexpr int WIN_SPRITE_BY_CHARACTER_SIZE = 14;
 
     /// @brief SpriteInfo struct holds the sprite information.
     struct SpriteInfo {
@@ -239,6 +244,11 @@ namespace mortal_kombat
         {2, 3714, 327, 329, 52}, // Sonya
         {2, 3714, 379, 329, 52}, // Goro
         {2, 3714, 431, 329, 52}, // Shang Tsung
+        {2, 3714, 15, 329, 52}, // Moshe = Cage
+{2, 3714, 67, 329, 52}, //Itamar = Kano
+{2, 3714, 119, 329, 52}, //Yaniv = Raiden
+{2, 3714, 223, 329, 52}, //Geffen = Scorpion
+{2, 3714, 327, 329, 52}, //Yonatan = Sonya
     }};
 
     static constexpr std::array<SpriteInfo, SPECIAL_ATTACK_SPRITE_SIZE>
